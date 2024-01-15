@@ -1,0 +1,31 @@
+.container {
+    display: compact;
+}
+
+.steppers {
+    display: flex;
+}
+
+.stepper {
+    display: flex;
+    align-items: center;
+}
+
+.stepperIcon {
+    margin-right: 0.6rem;
+}
+
+.stepperLabel {
+    text-transform: capitalize;
+    font-size: 0.875rem;
+}
+
+.chevron {
+    font-size: 12px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.opacity {
+    opacity: 0.8;
+}

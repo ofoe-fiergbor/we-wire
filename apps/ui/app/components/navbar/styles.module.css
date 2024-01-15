@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem 2rem;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.right {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+.bell {
+    display: flex;
+    background-color: var(--primary-tithe);
+    height: 2.5rem;
+    width: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.bellInner {
+    background-color: var(--primary-half);
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdownContainer {
+    background-color: var(--primary-tithe);
+    padding: 0.5em;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.dropdownDisplay {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.dropdownDisplayIconContainer {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: var(--primary-half);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.dropdownDisplayLabel {
+    color: #53433C;
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.125rem;
+}

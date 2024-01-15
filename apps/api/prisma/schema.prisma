@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid()) @db.VarChar(40)
+  username  String   @unique @db.VarChar(40)
+  password  String
+  timestamp DateTime @default(now())
+
+  wallets Wallet[]
+}
+
+model Wallet {
+  id        String            @id @default(uuid()) @db.VarChar(40)
+  balance   Float             @map("wallet_ballance")
+  currency  SupportedCurrency
+  userId    String            @db.VarChar(40)
+  createdAt DateTime          @default(now())
+
+  transactions Transaction[] @relation("wallet_to_transactions")
+  user         User          @relation(fields: [userId], references: [id])
+}
+
+model Transaction {
+  id             String            @id @default(uuid()) @db.VarChar(40)
+  amount         Float             @map("transaction_amount")
+  currency       SupportedCurrency @map("currency")
+  fee            Float?            @map("transaction_fee")
+  status         TransactionStatus
+  type           TransactionType
+  createdAt      DateTime          @default(now())
+  exchangeRateId String            @map("transaction_exchange_rate_id")
+  walletId       String            @map("wallet_id")
+
+  exchangeRate ExchangeRate @relation(fields: [exchangeRateId], references: [id])
+  wallet       Wallet       @relation("wallet_to_transactions", fields: [walletId], references: [id])
+}
+
+model ExchangeRate {
+  id           String            @id @default(uuid()) @db.VarChar(40)
+  rate         Float
+  fromCurrency SupportedCurrency @map("currency_from")
+  toCurrency   SupportedCurrency @map("currency_to")
+  timestamp    DateTime          @default(now())
+
+  transactions Transaction[]
+}
+
+enum SupportedCurrency {
+  NGN
+  GHS
+  USD
+  KES
+  EUR
+
+  @@map("supported_currencies")
+}
+
+enum TransactionStatus {
+  PENDING
+  COMPLETED
+  CANCELLED
+  FAILED
+}
+
+enum TransactionType {
+  DEBIT
+  CREDIT
+}

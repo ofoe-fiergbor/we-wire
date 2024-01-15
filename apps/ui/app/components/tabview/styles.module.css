@@ -1,0 +1,99 @@
+.tabHead {
+    margin-top: 1rem;
+    display: flex;
+    width: 11.9375rem;
+    padding: 0.75rem 1.25rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: #EAEAEA;
+    border-radius: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+}
+
+.tabContainer {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.currency {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.amountContainer {
+    display: flex;
+    width: 9.4375rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.amount {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.dateContainer {
+    display: flex;
+    align-items: center;
+}
+.date {
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+}
+.tabContent {
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    background-color: var(--white);
+    height: 65vh;
+    padding: 2rem 1rem 0 1rem;
+}
+.transactionHistoryText {
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.75rem;
+}
+
+.actionBar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.rightActionBar {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.datePicker {
+    padding: 0.5rem 0.8rem;
+}
+
+.rightActionBar > * {
+    cursor: pointer;
+}
+
+.tableContainer {
+    margin-top: 1rem;
+}
+
+.statusContainer {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    padding: 5px;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    background-color: var(--background-green);
+}
+
+.statusText {
+    color: var(--text-green);
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.125rem;
+    text-transform: capitalize;
+}

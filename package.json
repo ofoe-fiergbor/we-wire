@@ -1,0 +1,13 @@
+{
+  "name": "wewire",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:api": "cd apps/api && npm run start:dev",
+    "dev:ui": "cd apps/ui && npm run dev"
+  },
+  "author": "ofoe-fiergbor"
+}
